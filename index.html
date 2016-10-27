@@ -3,9 +3,9 @@
 <link rel="stylesheet" type="text/css" href="normalize.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
 <head>
-    <meta charset="UTF-8">
-
+    <link href="https://fonts.googleapis.com/css?family=Candal|Fredoka+One|Oswald|Roboto+Condensed:700|Roboto:300|Rubik+One" rel="stylesheet">    <meta charset="UTF-8">
     <title>Hungry Ever?</title>
     <script src="main.js"></script>
 
@@ -14,88 +14,93 @@
         // This example requires the Places library. Include the libraries=places
         // parameter when you first load the API. For example:
         // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-
     </script>
-
 </head>
 <body>
 <div id="map"></div>
     <div class="everything-wrapper">
         <header class="header-wrapper">
             <div class="header-logo">
-
-            </div>
-            <div class="header-title">
-                <h1>Ever Hungry?</h1>
+                <img src="assets/white_dice.png" class="dice-logo">
+                <h1 class="main-title">ever hungry?</h1>
             </div>
         </header>
         <div class="wheel-content-wrapper">
             <div class="wheel">
-                <div class="wheel-left">
+                <div class="wheel-left" id="div-wheel-left">
                     <div id="display-food-type"></div>
-                    <hr>
                     <button id="spin-button">Spin</button>
+                    <img src="assets/color_wheel.png" id="colorWheel"/>
                 </div>
-                <div class="wheel-right">
+                <div class="wheel-right" id="div-wheel-right">
                     <!-- Restaurant list is created here. -->
                 </div>
             </div>
             <div id="help-modal-wrapper" class="modal-wrapper">
-                Here is the help modal.
+                <h3>Welcome to <span class="product-name">EverHungry?</span></h3>
+                <p>Here it is: it's time to eat, and you just can't agree on what kind of food to have.
+                    <span class="product-name">EverHungry?</span> takes the pressure off of you and leaves
+                    it up to our state-of-the-art randomizer.</p>
+                <p><span class="product-name">EverHungry?</span> defaults to finding food near your current
+                    location, but just open the Location dialog to enter the zip code of your choice, and you can
+                    find food anywhere.</p>
+                <p><span class="product-name">EverHungry?</span> will find foods in a wide range of categories,
+                    but you can open the Settings dialog and opt in or out of any of them.
+                    <span class="product-name">EverHungry?</span> will remember your preferences, and use them
+                    until you decide to change them.</p>
+                <p>Once you spin the wheel, <span class="product-name">EverHungry?</span> will select a random
+                    food category, and then find and display restaurants of that type nearest to your specified
+                    location. You can then click on the Photos button to see pictures that people have posted
+                    about that restaurant, or the Directions button to get directions on how to get there.</p>
+                <h3>Bon Appetit!</h3>
+                <hr>
+                <button id="help-ok-button">OK</button>
             </div>
             <div id="location-modal-wrapper" class="modal-wrapper">
-                <input type="text" placeholder="enter zip code" class="userZip">
+                <input type="text" placeholder="address or zip code" class="userZip">
                 <input type="submit" value="submit" id="buttonLocationZip"><br>
                 <input type="submit" value="use current location" id="buttonLocationCurrent">
+                <input type="submit" value="Use current location" id="location-current-button">
+                <br>
+                <br>
+                <input type="submit" value="Use this Zip code" id="location-zip-button">
+                <input type="text" placeholder="enter zip code" class="userZip">
+                <br>
+                <hr>
+                <button id="location-ok-button">OK</button>
             </div>
             <div id="settings-modal-wrapper" class="modal-wrapper">
                 <h4>What goes on the wheel?</h4>
             </div>
-            <div id="camera-modal-wrapper" class="modal-wrapper">
-                Here is the camera modal.
+            <div id="photos-modal-wrapper" class="modal-wrapper">
+                <hr>
+                <button id="photos-ok-button">OK</button>
             </div>
             <div id="directions-modal-wrapper" class="modal-wrapper">
                 Here is the directions modal.
-            </div>
-            <div id="exit-modal-wrapper" class="modal-wrapper">
-                Here is the exit are-you-sure.
+                <hr>
+                <button id="directions-ok-button">OK</button>
             </div>
         </div>
         <footer class="footer-wrapper">
             <div class="help-button-wrapper">
-                <div class="help-button">
-                    help
+                <div class="help-button bottom-icons">
+                    ?
+                   <!-- <img src="assets/question_mark.png" class="bottom-icons">-->
                 </div>
             </div>
             <div class="location-button-wrapper">
                 <div class="location-button">
-                    location
+                    <img src="assets/white_location_pin.png" class="bottom-icons location-button">
                 </div>
             </div>
             <div class="settings-button-wrapper">
                 <div class="settings-button">
-                    settings
-                </div>
-            </div>
-            <div class="camera-button-wrapper">
-                <div class="camera-button">
-                    camera
-                </div>
-            </div>
-            <div class="direction-button-wrapper">
-                <div class="directions-button">
-                    directions
-                </div>
-            </div>
-            <div class="exit-button-wrapper">
-                <div class="exit-button">
-                    exit
+                    <img src="assets/white_setting_pin.png" class="bottom-icons settings-button">
                 </div>
             </div>
         </footer>
     </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZISd2dj9XOcOLvQC162avw5TOoS7d9_k&libraries=places" async defer></script>
-
 </body>
 </html>
