@@ -340,7 +340,7 @@ hr{
     height: auto;
     position: relative;
     display: block;
-    margin: 0 auto;
+    margin: 30px auto;
     vertical-align:center;
     top:30%;
 }
@@ -425,5 +425,16 @@ hr{
     .wheel-content-wrapper {
         height: 80%;
     }
-
+    .bottom-icons {
+        width: 25%;
+        height: auto;
+        position: relative;
+        display: block;
+        margin: 33px auto;
+        vertical-align:center;
+        top:30%;
+    }
+    #destination-input, #origin-input {
+        display:none;
+    }
 }
